@@ -10,6 +10,8 @@
 % the simpest example on Rosenbrock function
 %-------------------------------------------------------------------------%
 
+install;
+
 clc;
 clear;
 close all;
