@@ -63,9 +63,7 @@ function [xOut, fval, exitFlag, output] = bsSeisInv1DByTVAndSplitBregman(d, G, x
     
     % if the regParam is not given, I search it by a search subroutine
     % which is save in options.searchRegParamFcn. 
-    if ~isempty(regParam)
-        regParam = options.regParam;
-    else
+    if isempty(regParam)
         inputObjFcnPkgs = [{options.mainFunc, mainData, 1; @bsReg1DTV, parampkgs, 0;}; initObjFunc];
         regParam = bsFindBestRegParameter(options, inputObjFcnPkgs, xInit, Lb, Ub);
     end
